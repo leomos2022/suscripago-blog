@@ -97,11 +97,7 @@ const Blog = () => {
     }
   ]
 
-  const filteredPosts = posts.map(post => ({
-    ...post,
-    videoUrl: VIDEO_URL,
-    videoThumbnail: VIDEO_THUMBNAIL
-  })).filter(post => {
+  const filteredPosts = posts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
     const matchesCategory = selectedCategory === 'Todos' || post.category === selectedCategory
