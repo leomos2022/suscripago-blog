@@ -10,6 +10,7 @@ import {
 
 const PostDetail = () => {
   const { id } = useParams()
+  const VIDEO_URL = 'https://youtu.be/yapoE7lchkI'
   
   const posts = {
     1: {
@@ -699,16 +700,19 @@ const PostDetail = () => {
               <h3 className="text-lg font-semibold text-white mb-3 flex items-center">
                 <VideoIcon size={22} className="mr-2 text-electric" /> Video Complementario
               </h3>
-              <div className="aspect-w-16 aspect-h-9 bg-deep-black rounded-lg overflow-hidden">
-                <div className="w-full h-56 md:h-72 bg-deep-black flex items-center justify-center">
-                  <div className="text-center text-gray-500">
-                    <div className="flex justify-center mb-3 text-electric"><PlayIcon size={56} /></div>
-                    <p className="font-medium text-gray-300">Video sobre {post.category}</p>
-                    <p className="text-sm text-gray-500">(Contenido en desarrollo)</p>
-                  </div>
-                </div>
+              <div className="bg-deep-black rounded-lg border border-midnight p-5 md:p-6">
+                <p className="text-gray-300 mb-4">
+                  Este video acompaña el contenido de este artículo y está disponible en YouTube.
+                </p>
+                <a
+                  href={VIDEO_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-electric px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-electric/80"
+                >
+                  <PlayIcon size={16} /> Ver video en YouTube
+                </a>
               </div>
-              <p className="text-sm text-gray-400 mt-3">Contenido audiovisual para complementar el aprendizaje.</p>
             </div>
 
             {/* Contenido del artículo */}
@@ -719,7 +723,7 @@ const PostDetail = () => {
                     display: inline-flex;
                     align-items: center;
                     justify-content: center;
-                    width: 1.1em;
+                    width: 1.1em;I
                     height: 1.1em;
                     vertical-align: -0.15em;
                     margin: 0 0.2em;
