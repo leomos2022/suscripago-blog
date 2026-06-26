@@ -9,15 +9,12 @@ import {
   PenIcon,
   RocketIcon,
   SearchIcon,
-  TargetIcon,
-  VideoIcon
+  TargetIcon
 } from '../components/ui/Icons'
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('Todos')
   const [searchTerm, setSearchTerm] = useState('')
-  const VIDEO_URL = 'https://youtu.be/yapoE7lchkI'
-  const VIDEO_THUMBNAIL = 'https://img.youtube.com/vi/yapoE7lchkI/hqdefault.jpg'
   
   const categories = [
     { id: 'Todos', label: 'Todos', color: 'text-white', icon: BookIcon },
@@ -230,24 +227,6 @@ const Blog = () => {
                   <p className="text-gray-300 text-sm line-clamp-2 leading-relaxed">
                     {post.excerpt}
                   </p>
-                  <a
-                    href={post.videoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group mt-4 block overflow-hidden rounded-xl border border-midnight bg-deep-black shadow-sm transition-shadow hover:shadow-electric/30"
-                  >
-                    <div className="relative h-40 overflow-hidden">
-                      <img
-                        src={post.videoThumbnail}
-                        alt="Miniatura del video"
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <span className="absolute inset-0 bg-black/20" />
-                      <span className="absolute inset-x-0 bottom-0 px-3 py-2 bg-gradient-to-t from-black/90 to-transparent text-white text-sm font-semibold flex items-center gap-2">
-                        <PlayIcon size={16} /> Ver video
-                      </span>
-                    </div>
-                  </a>
                   <div className="mt-4 pt-4 border-t border-midnight flex justify-between items-center">
                     <span className="text-gray-400 text-xs inline-flex items-center gap-2">
                       <PenIcon size={14} className="text-electric" /> {post.author}
